@@ -24,7 +24,7 @@
         }
 
         header a {
-            color: inherit;
+            color: #e0e1dd;
             margin-left: 25px;
             text-decoration: none;
             font-weight: 500;
@@ -43,10 +43,10 @@
         .hero h1 {
             font-size: 55px;
             margin-bottom: 10px;
-            color: inherit;
+            color: #e0e1dd;
         }
 
-        .hero p { color: inherit; font-size: 18px; }
+        .hero p { color: #ccd5e1; font-size: 18px; }
 
         .hero img {
             width: 330px;
@@ -59,7 +59,11 @@
 
         section { padding: 60px 50px; }
 
-        h2 { font-size: 32px; margin-bottom: 20px; color: inherit; }
+        h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            color: #e0e1dd;
+        }
 
         .skills, .projects, .org-list, .train-list, .achieve-list {
             display: grid;
@@ -72,7 +76,6 @@
             padding: 20px;
             border-radius: 12px;
             box-shadow: 0 0 10px rgba(0,0,0,0.2);
-            color: inherit;
         }
 
         footer {
@@ -80,42 +83,75 @@
             padding: 20px;
             background: #1b263b;
             margin-top: 40px;
-            color: inherit;
         }
 
-        /* LIGHT MODE FIXES */
+        /* LIGHT MODE */
         body.light {
-            background: #f4f4f4;
+            background: #f0f0f0;
             color: #222;
         }
+        body.light header { background: rgba(0,0,0,0.05); }
+        body.light .card { background:#fff; color:#222; }
+        body.light footer { background:#ddd; color:#222; }
+        .hero, section, .card { transition: all 0.4s ease; }
 
-        body.light header {
-            background: rgba(0,0,0,0.05);
+        /* CERTIFICATE BUTTON */
+        .cert-btn {
+            display: inline-block;
+            padding: 12px 20px;
+            background: #415a77;
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 8px;
+            transition: 0.3s;
+            margin-top: 10px;
+            display: inline-block;
         }
 
-        body.light .card {
-            background: #ffffff;
-            color: #222;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
+        .cert-btn:hover { background: #1b263b; }
 
-        body.light footer {
-            background: #ddd;
-            color: #222;
-        }
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+                padding: 15px;
+            }
 
-        .hero, section, .card {
-            transition: all 0.4s ease;
-        }
+            header nav a {
+                margin: 10px;
+                display: inline-block;
+            }
 
-        a { color: inherit; text-decoration: none; }
+            .hero {
+                flex-direction: column-reverse;
+                text-align: center;
+                height: auto;
+                padding: 30px 20px;
+            }
+
+            .hero img {
+                width: 220px;
+                height: 220px;
+                margin-bottom: 20px;
+            }
+
+            .hero-text h1 {
+                font-size: 35px;
+            }
+
+            .skills, .projects, .org-list, .train-list, .achieve-list {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            }
+        }
     </style>
 
-    <script>
-    function toggleTheme() {
-        document.body.classList.toggle('light');
-    }
-    </script>
+<script>
+function toggleTheme() {
+  document.body.classList.toggle('light');
+}
+</script>
 </head>
 <body>
 
@@ -128,6 +164,7 @@
         <a href="#organization">Organization</a>
         <a href="#achievements">Achievements</a>
         <a href="#training">Training</a>
+        <a href="#activities">Activities</a>
         <a href="#contact">Contact</a>
     </nav>
 </header>
@@ -137,6 +174,7 @@ style="position:fixed; right:20px; bottom:20px; padding:12px 20px; border:none; 
 Toggle Theme
 </button>
 
+<!-- HERO -->
 <div class="hero">
     <div class="hero-text">
         <h1>Yogi Dwi Prasetyo</h1>
@@ -145,112 +183,160 @@ Toggle Theme
     <img src="IMG_0579.jpg" alt="Profile">
 </div>
 
+<!-- ABOUT -->
 <section id="about">
     <h2>About Me</h2>
     <p>
-        Tulis deskripsi bebas tentang dirimu di sini. Kamu bisa menjelaskan pengalaman kerja, fokus karier,
-        bidang engineering yang kamu kuasai, atau passion yang ingin kamu tonjolkan.  
-        <br><br>
-        (Silakan ubah teks ini sesuai keinginan.)
+        Highly motivated Mechatronics Engineering graduate with expertise in robotics, mechanics, electrical systems,
+        automation, and IoT. Experienced in maintenance engineering, dashboarding, and industrial automation.
     </p>
 </section>
 
+<!-- ORGANIZATION -->
 <section id="organization">
     <h2>Organizational Experience</h2>
     <div class="org-list">
-
-        <div class="card">
-            <strong>Penship Team Robotic</strong><br>
-            Tulis kegiatan, peran, kontribusi, prestasi, atau foto kegiatan di sini.
-        </div>
-
-        <div class="card">
-            <strong>E-BIO Organization</strong><br>
-            Tulis deskripsi pengalaman, tugas, dan dokumentasi kegiatan di sini.
-        </div>
-
-        <div class="card">
-            <strong>Unit Kesenian Islami</strong><br>
-            Tulis kegiatan, tampil di acara apa, dokumentasi, atau pengalamanmu.
-        </div>
-
-        <div class="card">
-            <strong>Ketupel Peduli Desa 2023</strong><br>
-            Jelaskan kegiatan sosial atau pengabdian yang kamu ikuti.
-        </div>
-
-        <div class="card">
-            <strong>Ketua PKM-KC</strong><br>
-            Tulis deskripsi proyek PKM yang kamu pimpin, tim, dan prosesnya.
-        </div>
-
+        <div class="card"><strong>Penship Team Robotic</strong><br>• Participate in national robotics competitions<br>• Mechanical Division Leader (2023)</div>
+        <div class="card"><strong>Eepis Bidikmisi Organization (E-BIO)</strong><br>• Staff Ahli Pengabdian Masyarakat 2023</div>
+        <div class="card"><strong>Unit Kesenian Islami</strong></div>
+        <div class="card"><strong>Ketupel Peduli Desa 2023</strong></div>
+        <div class="card"><strong>Ketua PKM-KC</strong></div>
     </div>
 </section>
 
+<!-- ACHIEVEMENTS -->
 <section id="achievements">
     <h2>Competition Achievements</h2>
     <div class="achieve-list">
-
-        <div class="card">COMET 2022 – Bisa isi dengan ceritamu + foto lomba</div>
-        <div class="card">KKCTNN ERC 2022 – Tambahkan pengalaman & dokumentasi</div>
-        <div class="card">KKCTBN ATSV 2023 – Ceritakan highlight kegiatan</div>
-        <div class="card">KRI KRBAI 2023 – Juara 2 Regional (Bisa tambah foto robot)</div>
-        <div class="card">KRI KRBAI 2023 – Juara 3 Nasional (Tambah detail proses)</div>
-
+        <div class="card">Boat Racing Competition COMET 2022 – Finalist</div>
+        <div class="card">KKCTNN ERC 2022 – Finalist</div>
+        <div class="card">KKCTBN ATSV 2023 – Finalist</div>
+        <div class="card">KRI KRBAI 2023 – Juara 2 Regional</div>
+        <div class="card">KRI KRBAI 2023 – Juara 3 Nasional</div>
     </div>
 </section>
 
+<!-- TRAINING & CERTIFICATION -->
 <section id="training">
     <h2>Training & Certifications</h2>
     <div class="train-list">
 
-        <div class="card"><a href="https://drive.google.com/file/d/1uEOVk8azZFh6d5bAjhmkQ6vD4YOI5P9s/view?usp=sharing" target="_blank">COMET 2022</a></div>
-        <div class="card"><a href="https://drive.google.com/file/d/1X5gcJVNMOS1RfinJW8HUu-6JJ82pQuol/view?usp=sharing" target="_blank">KKCTNN ERC 2022</a></div>
-        <div class="card"><a href="https://drive.google.com/file/d/1IzWC3RpYbKoi4oRMizqn_WaeIxeBohPB/view?usp=sharing" target="_blank">KKCTBN ATSV 2023</a></div>
-        <div class="card"><a href="https://drive.google.com/file/d/16QmnTKQTZ61P_-WL5ARO-UDJES_GwQkK/view?usp=sharing" target="_blank">KRI KRBAI 2023 – Juara 2</a></div>
-        <div class="card"><a href="https://drive.google.com/file/d/1EQMXWy9NN_uZj3mdNxfFE6AFBcU-eAgW/view?usp=sharing" target="_blank">KRI KRBAI 2023 – Juara 3</a></div>
+        <!-- Sertifikat dengan tombol modern -->
+        <div class="card">
+            <strong>COMET 2022 – Finalist</strong><br>
+            <a class="cert-btn" href="https://drive.google.com/file/d/1uEOVk8azZFh6d5bAjhmkQ6vD4YOI5P9s/view?usp=sharing" target="_blank">Lihat Sertifikat</a>
+        </div>
 
-        <div class="card"><a href="https://drive.google.com/file/d/1l3jW7WQdXC1IMvXoIwyBJNebjYY4cf3_/view?usp=sharing" target="_blank">Life Management Training 2022</a></div>
+        <div class="card">
+            <strong>KKCTNN ERC 2022 – Finalist</strong>
+            <a class="cert-btn" href="https://drive.google.com/file/d/1X5gcJVNMOS1RfinJW8HUu-6JJ82pQuol/view?usp=sharing" target="_blank">Lihat Sertifikat</a>
+        </div>
 
-        <div class="card"><a href="https://drive.google.com/file/d/1ImPdY9vImeUeTbJjbY9PkblmXVC5afnB/view?usp=sharing" target="_blank">Wirausaha Merdeka 2024</a></div>
+        <div class="card">
+            <strong>KKCTBN ATSV 2023 – Finalist</strong>
+            <a class="cert-btn" href="https://drive.google.com/file/d/1IzWC3RpYbKoi4oRMizqn_WaeIxeBohPB/view?usp=sharing" target="_blank">Lihat Sertifikat</a>
+        </div>
 
-        <div class="card"><a href="https://drive.google.com/file/d/1uLUtQA8ZZgPBqf4cCNOs28gejp2amVh3/view?usp=sharing" target="_blank">BNSP Elektronika</a></div>
+        <div class="card">
+            <strong>KRI KRBAI 2023 – Juara 2 Regional</strong>
+            <a class="cert-btn" href="https://drive.google.com/file/d/16QmnTKQTZ61P_-WL5ARO-UDJES_GwQkK/view?usp=sharing" target="_blank">Lihat Sertifikat</a>
+        </div>
 
-        <div class="card"><a href="https://drive.google.com/file/d/15seWhItb-7dibAt_OhLTsoZ9OwCx5fBZ/view?usp=sharing" target="_blank">BNSP Pemesinan</a></div>
+        <div class="card">
+            <strong>KRI KRBAI 2023 – Juara 3 Nasional</strong>
+            <a class="cert-btn" href="https://drive.google.com/file/d/1EQMXWy9NN_uZj3mdNxfFE6AFBcU-eAgW/view?usp=sharing" target="_blank">Lihat Sertifikat</a>
+        </div>
 
-        <div class="card"><a href="https://drive.google.com/file/d/1JRtlfaLkypmfbY3RKdFGSDcL8CBQN9jV/view?usp=sharing" target="_blank">PKM-Karsa Cipta</a></div>
+        <div class="card">
+            <strong>Life Management Training 2022</strong>
+            <a class="cert-btn" href="https://drive.google.com/file/d/1l3jW7WQdXC1IMvXoIwyBJNebjYY4cf3_/view?usp=sharing" target="_blank">Lihat Sertifikat</a>
+        </div>
 
-        <div class="card"><a href="https://drive.google.com/file/d/1Bw8rqShDSk3wy_ayMlXx8AYLstJb2igf/view?usp=sharing" target="_blank">Magang PT. Toshin Prima</a></div>
+        <div class="card">
+            <strong>Wirausaha Merdeka 2024 – Produk Inovasi Terbaik</strong>
+            <a class="cert-btn" href="https://drive.google.com/file/d/1ImPdY9vImeUeTbJjbY9PkblmXVC5afnB/view?usp=sharing" target="_blank">Lihat Sertifikat</a>
+        </div>
+
+        <div class="card">
+            <strong>BNSP Elektronika</strong>
+            <a class="cert-btn" href="https://drive.google.com/file/d/1uLUtQA8ZZgPBqf4cCNOs28gejp2amVh3/view?usp=sharing" target="_blank">Lihat Sertifikat</a>
+        </div>
+
+        <div class="card">
+            <strong>BNSP Pemesinan</strong>
+            <a class="cert-btn" href="https://drive.google.com/file/d/15seWhItb-7dibAt_OhLTsoZ9OwCx5fBZ/view?usp=sharing" target="_blank">Lihat Sertifikat</a>
+        </div>
+
+        <div class="card">
+            <strong>PKM - Karsa Cipta</strong>
+            <a class="cert-btn" href="https://drive.google.com/file/d/1JRtlfaLkypmfbY3RKdFGSDcL8CBQN9jV/view?usp=sharing" target="_blank">Lihat Sertifikat</a>
+        </div>
+
+        <div class="card">
+            <strong>Magang PT. Toshin Prima</strong>
+            <a class="cert-btn" href="https://drive.google.com/file/d/1Bw8rqShDSk3wy_ayMlXx8AYLstJb2igf/view?usp=sharing" target="_blank">Lihat Sertifikat</a>
+        </div>
+    </div>
+</section>
+
+<!-- ACTIVITIES WITH PHOTO -->
+<section id="activities">
+    <h2>Kegiatan & Dokumentasi</h2>
+    <div class="projects">
+
+        <div class="card">
+            <img src="foto1.jpg" style="width:100%; border-radius:10px; margin-bottom:10px;">
+            <strong>Nama Kegiatan 1</strong>
+            <p>Deskripsi kegiatan ini bisa kamu ubah sendiri sesuai kebutuhan.</p>
+        </div>
+
+        <div class="card">
+            <img src="foto2.jpg" style="width:100%; border-radius:10px; margin-bottom:10px;">
+            <strong>Nama Kegiatan 2</strong>
+            <p>Tuliskan detail kegiatan atau pengalaman yang ingin ditampilkan.</p>
+        </div>
+
+        <div class="card">
+            <img src="foto3.jpg" style="width:100%; border-radius:10px; margin-bottom:10px;">
+            <strong>Nama Kegiatan 3</strong>
+            <p>Isi bebas, kamu bisa menambahkan cerita atau informasi kegiatan.</p>
+        </div>
 
     </div>
 </section>
 
+<!-- SKILLS -->
 <section id="skills">
     <h2>Technical Skills</h2>
     <div class="skills">
-        <div class="card">ESP32 / ESP8266 – Tambahkan foto alat</div>
-        <div class="card">PZEM-004T / Modbus – Deskripsi bebas</div>
-        <div class="card">Node-RED – Bisa masukkan screenshot dashboard</div>
-        <div class="card">MQTT Broker – Tulis pengalamanmu</div>
-        <div class="card">Electrical Maintenance – Tambahkan dokumentasi panel</div>
-        <div class="card">Fiix CMMS – Tambahkan foto input data</div>
-        <div class="card">Python / Arduino – Bisa tambah contoh proyek</div>
+        <div class="card">ESP32 / ESP8266</div>
+        <div class="card">PZEM-004T / Modbus</div>
+        <div class="card">Node-RED Dashboard</div>
+        <div class="card">MQTT Broker</div>
+        <div class="card">Electrical Panel Maintenance</div>
+        <div class="card">Fiix CMMS Management</div>
+        <div class="card">Python / Arduino</div>
     </div>
 </section>
 
+<!-- PROJECTS -->
 <section id="projects">
     <h2>Projects</h2>
     <div class="projects">
-        <div class="card">Monitoring 3 Phase PZEM + ESP32 – Tambahkan foto alat</div>
-        <div class="card">Dashboard Node-RED + MySQL – Tambah screenshot</div>
-        <div class="card">CMMS Asset Digitization – Tambah dokumentasi lapangan</div>
-        <div class="card">Automation Panel – Tambah foto wiring / panel</div>
+        <div class="card">Monitoring 3 Phase PZEM + ESP32</div>
+        <div class="card">Dashboard Node-RED + MySQL Logging</div>
+        <div class="card">CMMS Asset Data Digitization</div>
+        <div class="card">Automation Monitoring Panel</div>
     </div>
 </section>
 
+<!-- CONTACT -->
 <section id="contact">
     <h2>Contact Me</h2>
     <p>Email: pyogidwi@gmail.com</p>
+    <p>WhatApp: +62 81315573939</p>
+    <p>LinkedIN: Yogi Dwi Prasetyo</p>
+    <p>Instagram: yogidwiprasety0</p>
 </section>
 
 <footer>
