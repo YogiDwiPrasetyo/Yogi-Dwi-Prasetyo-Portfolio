@@ -1,184 +1,182 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yogi Dwi Prasetyo - Portfolio</title>
-    <style>
-        body {
-            transition: background 0.4s, color 0.4s;
-            margin: 0;
-            font-family: 'Segoe UI', sans-serif;
-            background: #0d1b2a;
-            color: white;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yogi Dwi Prasetyo | Portfolio</title>
 
-        header {
-            display: flex;
-            justify-content: space-between;
-            padding: 20px 50px;
-            background: rgba(255,255,255,0.05);
-            backdrop-filter: blur(10px);
-            position: sticky;
-            top: 0;
-        }
-
-        header a {
-            color: #e0e1dd;
-            margin-left: 25px;
-            text-decoration: none;
-            font-weight: 500;
-        }
-
-        .hero {
-            height: 90vh;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 50px;
-        }
-
-        .hero-text { max-width: 50%; }
-
-        .hero h1 {
-            font-size: 55px;
-            margin-bottom: 10px;
-            color: #e0e1dd;
-        }
-
-        .hero p { color: #ccd5e1; font-size: 18px; }
-
-        .hero img {
-            width: 330px;
-            height: 330px;
-            border-radius: 50%;
-            border: 4px solid #1b263b;
-            box-shadow: 0px 0px 20px #1b263b;
-            object-fit: cover;
-        }
-
-        section { padding: 60px 50px; }
-
-        h2 {
-            font-size: 32px;
-            margin-bottom: 20px;
-            color: #e0e1dd;
-        }
-
-        .skills, .projects, .org-list, .train-list, .achieve-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
-
-        .card {
-            background: #1b263b;
-            padding: 20px;
-            border-radius: 12px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.2);
-        }
-
-        footer {
-            text-align: center;
-            padding: 20px;
-            background: #1b263b;
-            margin-top: 40px;
-        }
-
-        /* LIGHT MODE */
-        body.light {
-            background: #f0f0f0;
-            color: #222;
-        }
-        body.light header { background: rgba(0,0,0,0.05); }
-        body.light .card { background:#fff; color:#222; }
-        body.light footer { background:#ddd; color:#222; }
-        .hero, section, .card { transition: all 0.4s ease; }
-
-        /* CERTIFICATE BUTTON */
-        .cert-btn {
-            display: inline-block;
-            padding: 12px 20px;
-            background: #415a77;
-            color: white;
-            text-decoration: none;
-            font-weight: 600;
-            border-radius: 8px;
-            transition: 0.3s;
-            margin-top: 10px;
-            display: inline-block;
-        }
-
-        .cert-btn:hover { background: #1b263b; }
-
-        /* RESPONSIVE */
-        @media (max-width: 768px) {
-            header {
-                flex-direction: column;
-                text-align: center;
-                padding: 15px;
-            }
-
-            header nav a {
-                margin: 10px;
-                display: inline-block;
-            }
-
-            .hero {
-                flex-direction: column-reverse;
-                text-align: center;
-                height: auto;
-                padding: 30px 20px;
-            }
-
-            .hero img {
-                width: 220px;
-                height: 220px;
-                margin-bottom: 20px;
-            }
-
-            .hero-text h1 {
-                font-size: 35px;
-            }
-
-            .skills, .projects, .org-list, .train-list, .achieve-list {
-                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            }
-        }
-    </style>
-
-<script>
-function toggleTheme() {
-  document.body.classList.toggle('light');
+<style>
+:root{
+    --blue-main:#1f3c88;
+    --blue-soft:#3a5ba0;
+    --blue-dark:#0d1b2a;
+    --yellow:#f4c430;
+    --text-dark:#222;
 }
-</script>
+
+*{box-sizing:border-box}
+
+body{
+    margin:0;
+    font-family:'Segoe UI',sans-serif;
+    background:linear-gradient(135deg,var(--blue-main),var(--blue-soft));
+    color:white;
+}
+
+/* HEADER */
+header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 50px;
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(10px);
+    position:sticky;
+    top:0;
+    z-index:100;
+}
+
+header a{
+    color:white;
+    margin-left:20px;
+    text-decoration:none;
+    font-weight:500;
+}
+
+header a:hover{ color:var(--yellow); }
+
+/* HERO */
+.hero{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:90px 50px;
+}
+
+.hero-text{ max-width:55%; }
+
+.hero h1{ font-size:52px; margin-bottom:10px; }
+.hero p{ font-size:18px; color:#f0f0f0; }
+
+.hero img{
+    width:250px;
+    height:250px;
+    border-radius:50%;
+    border:5px solid var(--yellow);
+    object-fit:cover;
+}
+
+/* SECTION */
+section{
+    padding:70px 50px;
+    background:white;
+    color:var(--text-dark);
+}
+
+section:nth-child(even){ background:#f5f7fb; }
+
+h2{
+    font-size:34px;
+    margin-bottom:25px;
+    color:var(--blue-main);
+}
+
+h2::after{
+    content:'';
+    width:60px;
+    height:4px;
+    background:var(--yellow);
+    display:block;
+    margin-top:8px;
+}
+
+/* GRID */
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:white;
+    padding:20px;
+    border-radius:14px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.12);
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+}
+
+/* CERT BUTTON */
+.cert-btn{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    padding:6px 14px;
+    background:var(--yellow);
+    color:#000;
+    font-weight:600;
+    border-radius:20px;
+    text-decoration:none;
+    font-size:14px;
+    margin-top:10px;
+}
+
+.cert-btn:hover{
+    background:var(--blue-main);
+    color:white;
+}
+
+/* ACTIVITY IMAGE */
+.activity-img{
+    width:100%;
+    height:230px;
+    object-fit:cover;
+    border-radius:12px;
+    margin-bottom:12px;
+}
+
+/* FOOTER */
+footer{
+    background:var(--blue-dark);
+    color:white;
+    text-align:center;
+    padding:25px;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+    header{flex-direction:column}
+    .hero{flex-direction:column;text-align:center}
+    .hero-text{max-width:100%}
+    .hero img{margin-top:25px}
+}
+</style>
 </head>
+
 <body>
 
 <header>
-    <div><strong>Yogi Dwi Prasetyo</strong></div>
+    <strong>Yogi Dwi Prasetyo</strong>
     <nav>
         <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
         <a href="#organization">Organization</a>
         <a href="#achievements">Achievements</a>
         <a href="#training">Training</a>
         <a href="#activities">Activities</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
         <a href="#contact">Contact</a>
     </nav>
 </header>
-
-<button onclick="toggleTheme()" 
-style="position:fixed; right:20px; bottom:20px; padding:12px 20px; border:none; border-radius:8px; background:#415a77; color:white; cursor:pointer;">
-Toggle Theme
-</button>
 
 <!-- HERO -->
 <div class="hero">
     <div class="hero-text">
         <h1>Yogi Dwi Prasetyo</h1>
-        <p>Electrical & IOT Engineering | Automation | CMMS Implementation | Embedded System</p>
+        <p>Electrical & IoT Engineering | Automation | CMMS | Embedded System</p>
     </div>
     <img src="IMG_0579.jpg" alt="Profile">
 </div>
@@ -187,28 +185,27 @@ Toggle Theme
 <section id="about">
     <h2>About Me</h2>
     <p>
-        Highly motivated Mechatronics Engineering graduate with expertise in robotics, mechanics, electrical systems,
-        automation, and IoT. Experienced in maintenance engineering, dashboarding, and industrial automation.
+        Mechatronics Engineering graduate with experience in robotics, electrical systems,
+        industrial automation, IoT monitoring, and CMMS implementation.
     </p>
 </section>
 
 <!-- ORGANIZATION -->
 <section id="organization">
     <h2>Organizational Experience</h2>
-    <div class="org-list">
-        <div class="card"><strong>Penship Team Robotic</strong><br>• Participate in national robotics competitions<br>• Mechanical Division Leader (2023)</div>
-        <div class="card"><strong>Eepis Bidikmisi Organization (E-BIO)</strong><br>• Staff Ahli Pengabdian Masyarakat 2023</div>
-        <div class="card"><strong>Unit Kesenian Islami</strong></div>
-        <div class="card"><strong>Ketupel Peduli Desa 2023</strong></div>
-        <div class="card"><strong>Ketua PKM-KC</strong></div>
+    <div class="grid">
+        <div class="card"><strong>Penship Team Robotic</strong><br>Mechanical Division Leader (2023)</div>
+        <div class="card"><strong>E-BIO Organization</strong><br>Community Service Staff</div>
+        <div class="card"><strong>Ketua PKM - KC</strong></div>
+        <div class="card"><strong>Ketupel Peduli Desa</strong></div>
     </div>
 </section>
 
 <!-- ACHIEVEMENTS -->
 <section id="achievements">
     <h2>Competition Achievements</h2>
-    <div class="achieve-list">
-        <div class="card">Boat Racing Competition COMET 2022 – Finalist</div>
+    <div class="grid">
+        <div class="card">COMET Boat Racing 2022 – Finalist</div>
         <div class="card">KKCTNN ERC 2022 – Finalist</div>
         <div class="card">KKCTBN ATSV 2023 – Finalist</div>
         <div class="card">KRI KRBAI 2023 – Juara 2 Regional</div>
@@ -216,90 +213,50 @@ Toggle Theme
     </div>
 </section>
 
-<!-- TRAINING & CERTIFICATION -->
+<!-- TRAINING -->
 <section id="training">
     <h2>Training & Certifications</h2>
-    <div class="train-list">
+    <div class="grid">
 
-        <!-- Sertifikat dengan tombol modern -->
         <div class="card">
-            <strong>COMET 2022 – Finalist</strong><br>
-            <a class="cert-btn" href="https://drive.google.com/file/d/1uEOVk8azZFh6d5bAjhmkQ6vD4YOI5P9s/view?usp=sharing" target="_blank">Lihat Sertifikat</a>
+            <strong>PKM – Karsa Cipta</strong><br>
+            <a class="cert-btn" href="#" target="_blank">📄 Lihat</a>
         </div>
 
         <div class="card">
-            <strong>KKCTNN ERC 2022 – Finalist</strong>
-            <a class="cert-btn" href="https://drive.google.com/file/d/1X5gcJVNMOS1RfinJW8HUu-6JJ82pQuol/view?usp=sharing" target="_blank">Lihat Sertifikat</a>
+            <strong>BNSP Elektronika</strong><br>
+            <a class="cert-btn" href="#" target="_blank">📄 Lihat</a>
         </div>
 
         <div class="card">
-            <strong>KKCTBN ATSV 2023 – Finalist</strong>
-            <a class="cert-btn" href="https://drive.google.com/file/d/1IzWC3RpYbKoi4oRMizqn_WaeIxeBohPB/view?usp=sharing" target="_blank">Lihat Sertifikat</a>
+            <strong>Wirausaha Merdeka 2024</strong><br>
+            <a class="cert-btn" href="#" target="_blank">📄 Lihat</a>
         </div>
 
-        <div class="card">
-            <strong>KRI KRBAI 2023 – Juara 2 Regional</strong>
-            <a class="cert-btn" href="https://drive.google.com/file/d/16QmnTKQTZ61P_-WL5ARO-UDJES_GwQkK/view?usp=sharing" target="_blank">Lihat Sertifikat</a>
-        </div>
-
-        <div class="card">
-            <strong>KRI KRBAI 2023 – Juara 3 Nasional</strong>
-            <a class="cert-btn" href="https://drive.google.com/file/d/1EQMXWy9NN_uZj3mdNxfFE6AFBcU-eAgW/view?usp=sharing" target="_blank">Lihat Sertifikat</a>
-        </div>
-
-        <div class="card">
-            <strong>Life Management Training 2022</strong>
-            <a class="cert-btn" href="https://drive.google.com/file/d/1l3jW7WQdXC1IMvXoIwyBJNebjYY4cf3_/view?usp=sharing" target="_blank">Lihat Sertifikat</a>
-        </div>
-
-        <div class="card">
-            <strong>Wirausaha Merdeka 2024 – Produk Inovasi Terbaik</strong>
-            <a class="cert-btn" href="https://drive.google.com/file/d/1ImPdY9vImeUeTbJjbY9PkblmXVC5afnB/view?usp=sharing" target="_blank">Lihat Sertifikat</a>
-        </div>
-
-        <div class="card">
-            <strong>BNSP Elektronika</strong>
-            <a class="cert-btn" href="https://drive.google.com/file/d/1uLUtQA8ZZgPBqf4cCNOs28gejp2amVh3/view?usp=sharing" target="_blank">Lihat Sertifikat</a>
-        </div>
-
-        <div class="card">
-            <strong>BNSP Pemesinan</strong>
-            <a class="cert-btn" href="https://drive.google.com/file/d/15seWhItb-7dibAt_OhLTsoZ9OwCx5fBZ/view?usp=sharing" target="_blank">Lihat Sertifikat</a>
-        </div>
-
-        <div class="card">
-            <strong>PKM - Karsa Cipta</strong>
-            <a class="cert-btn" href="https://drive.google.com/file/d/1JRtlfaLkypmfbY3RKdFGSDcL8CBQN9jV/view?usp=sharing" target="_blank">Lihat Sertifikat</a>
-        </div>
-
-        <div class="card">
-            <strong>Magang PT. Toshin Prima</strong>
-            <a class="cert-btn" href="https://drive.google.com/file/d/1Bw8rqShDSk3wy_ayMlXx8AYLstJb2igf/view?usp=sharing" target="_blank">Lihat Sertifikat</a>
-        </div>
     </div>
 </section>
 
-<!-- ACTIVITIES WITH PHOTO -->
+<!-- ACTIVITIES -->
 <section id="activities">
     <h2>Kegiatan & Dokumentasi</h2>
-    <div class="projects">
+    <div class="grid">
 
         <div class="card">
-            <img src="foto1.jpg" style="width:100%; border-radius:10px; margin-bottom:10px;">
-            <strong>Nama Kegiatan 1</strong>
-            <p>Deskripsi kegiatan ini bisa kamu ubah sendiri sesuai kebutuhan.</p>
+            <img src="foto1.jpg" class="activity-img">
+            <strong>KRI KRBAI 2023</strong>
+            <p>Kontes Robot Indonesia – Divisi KRBAI tingkat nasional.</p>
         </div>
 
         <div class="card">
-            <img src="foto2.jpg" style="width:100%; border-radius:10px; margin-bottom:10px;">
-            <strong>Nama Kegiatan 2</strong>
-            <p>Tuliskan detail kegiatan atau pengalaman yang ingin ditampilkan.</p>
+            <img src="foto2.jpg" class="activity-img">
+            <strong>PKM – Karsa Cipta</strong>
+            <p>Pengembangan dan implementasi inovasi teknologi mahasiswa.</p>
         </div>
 
         <div class="card">
-            <img src="foto3.jpg" style="width:100%; border-radius:10px; margin-bottom:10px;">
-            <strong>Nama Kegiatan 3</strong>
-            <p>Isi bebas, kamu bisa menambahkan cerita atau informasi kegiatan.</p>
+            <img src="foto3.jpg" class="activity-img">
+            <strong>Magang Industri</strong>
+            <p>Kegiatan magang dan maintenance sistem industri.</p>
         </div>
 
     </div>
@@ -308,39 +265,37 @@ Toggle Theme
 <!-- SKILLS -->
 <section id="skills">
     <h2>Technical Skills</h2>
-    <div class="skills">
+    <div class="grid">
         <div class="card">ESP32 / ESP8266</div>
         <div class="card">PZEM-004T / Modbus</div>
         <div class="card">Node-RED Dashboard</div>
-        <div class="card">MQTT Broker</div>
-        <div class="card">Electrical Panel Maintenance</div>
-        <div class="card">Fiix CMMS Management</div>
-        <div class="card">Python / Arduino</div>
+        <div class="card">MQTT & IoT</div>
+        <div class="card">Electrical Panel</div>
+        <div class="card">Fiix CMMS</div>
     </div>
 </section>
 
 <!-- PROJECTS -->
 <section id="projects">
     <h2>Projects</h2>
-    <div class="projects">
+    <div class="grid">
         <div class="card">Monitoring 3 Phase PZEM + ESP32</div>
-        <div class="card">Dashboard Node-RED + MySQL Logging</div>
-        <div class="card">CMMS Asset Data Digitization</div>
+        <div class="card">Node-RED Dashboard & MySQL</div>
+        <div class="card">CMMS Asset Digitization</div>
         <div class="card">Automation Monitoring Panel</div>
     </div>
 </section>
 
 <!-- CONTACT -->
 <section id="contact">
-    <h2>Contact Me</h2>
+    <h2>Contact</h2>
     <p>Email: pyogidwi@gmail.com</p>
-    <p>WhatApp: +62 81315573939</p>
-    <p>LinkedIn: Yogi Dwi Prasetyo</p>
+    <p>WhatsApp: +62 813-1557-3939</p>
     <p>Instagram: yogidwiprasety0</p>
 </section>
 
 <footer>
-    © 2025 Yogi Dwi Prasetyo – Mechatronics Engineering
+    © 2025 Yogi Dwi Prasetyo – Portfolio
 </footer>
 
 </body>
