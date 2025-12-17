@@ -16,17 +16,6 @@
 
 *{ box-sizing:border-box; }
 
-<script>
-window.addEventListener("scroll", function () {
-    const header = document.querySelector("header");
-    if (window.scrollY > 80) {
-        header.classList.add("scrolled");
-    } else {
-        header.classList.remove("scrolled");
-    }
-});
-</script>
-
 body {
     margin: 0;
     font-family: 'Segoe UI', sans-serif;
@@ -54,21 +43,6 @@ header a {
 }
 
 header a:hover { color: var(--yellow); }
-
-    /* HEADER STATE AFTER SCROLL */
-header.scrolled {
-    background: rgba(255,255,255,0.95);
-    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-}
-
-header.scrolled a,
-header.scrolled strong {
-    color: var(--blue-main);
-}
-
-header.scrolled a:hover {
-    color: var(--yellow);
-}
 
 /* HERO */
 .hero {
